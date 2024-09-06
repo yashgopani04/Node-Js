@@ -1,6 +1,10 @@
 const fs = require('fs')
 
-// Sync...
+const os = require('os')
+
+console.log(os.cpus().length) // We can check our cpus size whic means CpuSize == Max threds size
+
+// Sync... -- Blocking Req
 
 // it returns result or something
 
@@ -21,7 +25,7 @@ const fs = require('fs')
 // console.log(result);
 
 
-// for async, it expeacts call back and give a results in that
+// for async -- Non-Blocking req, it expeacts call back and give a results in that
 
 fs.readFile('./Contects.txt','utf-8',(err, result) => {
     if (err) {
